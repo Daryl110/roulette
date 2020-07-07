@@ -25,10 +25,12 @@ public class Roulette implements Serializable {
     }
 
     public Date getCreatedAt() {
+
         return createdAt;
     }
 
     public Date getUpdatedAt() {
+
         return updatedAt;
     }
 
@@ -37,18 +39,41 @@ public class Roulette implements Serializable {
     }
 
     public int getMaxBet() {
+
         return maxBet;
     }
 
     public int[] getNumbers() {
+
         return this.numbers;
     }
 
     public String[] getColors() {
+
         return this.colors;
     }
 
+    public String getColor(String color) {
+        for (String colorOfColors : this.colors) {
+            if (colorOfColors.equalsIgnoreCase(color)) return colorOfColors;
+        }
+
+        return null;
+    }
+
+    public boolean containsNumber(int number) {
+        for (int numberOfNumbers : this.numbers) {
+            if (number == numberOfNumbers) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public String getState() {
+
         return this.state;
     }
 

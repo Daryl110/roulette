@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public abstract class RedisRepository<T> {
+
     protected final RedisTemplate<String, T> redisTemplate;
     protected final String key;
     protected HashOperations<String, String, T> hashOperations;
@@ -33,9 +34,5 @@ public abstract class RedisRepository<T> {
 
     public void edit(String id, T object) {
         this.hashOperations.put(this.key, id, object);
-    }
-
-    public void delete(Integer id) {
-        this.hashOperations.delete(this.key, id);
     }
 }
