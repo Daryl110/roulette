@@ -1,3 +1,3 @@
 # roulette
 
-Build with spring boot, bd in redis
+it Builded with spring boot, db in redis
